@@ -17,6 +17,3 @@ import queryString from "query-string";
 console.log(queryString.parse(location.search));
 export default {};
 </script>
-
-<style lang="scss" scoped>
-</style>

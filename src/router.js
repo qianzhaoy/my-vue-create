@@ -7,15 +7,23 @@ export default new Router({
   routes: [
     {
       path: "/follow",
-      component: () => import("@/views/follow/index")
+      component: () => import("@/views/follow")
     },
     {
-      path: "/enter-user",
-      component: () => import("@/views/enterUser/index")
+      path: "/enterUser",
+      component: () => import("@/views/enterUser")
     },
     {
-      path: "/user-info",
-      component: () => import("@/views/userInfo/index")
+      path: "/userInfo",
+      component: () => import("@/views/userInfo")
+    },
+    {
+      path: "/receiveCoupon",
+      component: () => import("@/views/receiveCoupon")
+    },
+    {
+      path: "/couponList",
+      component: () => import("@/views/couponList")
     }
   ]
 });
