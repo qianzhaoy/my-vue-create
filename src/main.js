@@ -7,18 +7,9 @@ import router from "./router";
 import axios from "./core/axios";
 Vue.use(axios);
 
-import { Button, Cell, CellGroup, Locale } from "vant";
+import { Button, Cell, CellGroup } from "vant";
 Vue.use(Button);
 Vue.use(Cell).use(CellGroup);
-
-const messages = {
-  "zh-CN": {
-    vanCouponList: {
-      disabled: "已用或过期优惠券"
-    }
-  }
-};
-Locale.add(messages);
 
 import VeeValidate, { Validator } from "vee-validate";
 import zhCN from "vee-validate/dist/locale/zh_CN";
@@ -29,7 +20,13 @@ Vue.use(VeeValidate, {
 
 Vue.config.productionTip = false;
 
-new Vue({
-  router,
-  render: h => h(App)
-}).$mount("#app");
+import beforRender from "./core/beforInit";
+
+(async () => {
+  // beforRender 里已经 try catch 了, 所以这里不会报错
+  await beforRender();
+  new Vue({
+    router,
+    render: h => h(App)
+  }).$mount("#app");
+})();

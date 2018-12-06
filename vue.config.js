@@ -1,4 +1,13 @@
 module.exports = {
+  devServer: {
+    port: 6060
+    // proxy: {
+    //   "/v1": {
+    //     target: "proxy url",
+    //     changeOrigin: true
+    //   }
+    // }
+  },
   css: {
     loaderOptions: {
       css: {
@@ -6,7 +15,6 @@ module.exports = {
       },
       less: {
         modifyVars: {
-          red: "#1989fa",
           "button-primary-background-color": "#1989fa"
         }
       }
